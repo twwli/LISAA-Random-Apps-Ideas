@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Roobert';
+    src: url('fonts/Roobert-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  *
+  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    font-family: 'Roobert', helvetica, sans-serif;
+  }
+  
+  .container {
+    padding: 10vw;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .content h1 {
+    font-size: 8.5vw;
+    line-height: .85em;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    margin-bottom: .5em;
+    max-width: 65vw;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  #idea-info {
+    position: fixed;
+    bottom: 2.25em;
+    left: 10em;
+    right: 10em;
+    padding: 1.5em;
+    background: rgba(255, 255, 255, .75);
+    border-radius: 1em;
+  }
+  
+  #idea-info p {
+    color: #111;
+    font-family: "helvetica neue", helvetica, sans-serif;
+    font-size: .95em;
+    line-height: 1.5em;
+  }
+  
+  button {
+    position: fixed;
+    bottom: 2.5em;
+    right: 2.5em;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+  }
+  
+  button svg {
+    display:block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  
+  button:hover {
+    background-color: inherit;
+  }
+  
+  button:active {
+    opacity:.5;
+  }
+  
+  #info {
+    position: fixed;
+    bottom: 2.25em;
+    left: 2.25em;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border: 5px solid;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    display: none;
+  }
+  
+  #info svg {
+    width: 10px;
+    margin-bottom: 2px;
+  }
