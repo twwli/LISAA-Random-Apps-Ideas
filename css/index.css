@@ -93,3 +93,18 @@
   button:active {
     opacity:.5;
   }
+
+  @media screen and (max-width: 660px) {
+
+    .container h1 {
+      font-size: 15vw;
+      width: 94%;
+      max-width: 94%;
+    }
+
+    .infobox {
+      width: 94%;
+      bottom: 7em;
+    }
+
+  }
