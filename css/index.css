@@ -28,36 +28,40 @@
   }
   
   .container {
-    padding: 10vw;
-    height: 100%;
+    position: relative;
+    padding: 0 10vw; 
+    height: calc(100% - 150px);
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
-  
-  .content h1 {
+ 
+  .container h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 8.5vw;
+    font-weight: 500;
     line-height: .85em;
     text-transform: uppercase;
     letter-spacing: -0.005em;
-    margin-bottom: .5em;
     max-width: 65vw;
     text-align: center;
-    margin: 0 auto;
+    margin: 0;
   }
   
-  #idea-info {
+  .infobox {
     position: fixed;
     bottom: 1.25em;
-    left: 10em;
-    right: 10em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
     padding: 1.5em;
     background: rgba(255, 255, 255, .75);
     border-radius: 1em;
   }
   
-  #idea-info p {
+  .infobox p {
     color: #111;
     font-family: "helvetica neue", helvetica, sans-serif;
     font-size: .95em;

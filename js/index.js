@@ -170,7 +170,7 @@ var tempList = "";
     },
     { 
       name: "Find Flexible Work",
-      info: "With the arrival of millennials and gen Zs in the workforce, flexible work culture started to gain prominence. And with COVID 19 rewriting the way offices operate, the traditional office setup is also adapting to flexible work. In this scenario, an app that provides a medium for people to find flexible work would be ideal. The app can act as a platform where employers share the requirement for the skills they need, along with the period of hiring and details. Interested candidates can connect with them through the app. This can be beneficial for both parties. The new generation doesn’t want to be tied to a single job or a strict work schedule. Flexible work opportunities can satisfy their creative needs while also giving them the safety of work and versatility in carrying it out. For employers, this will provide a platform where they can hire based on demand. The need for varied skills is increasing day by day, especially in industries such as IT. Recruiting full-time employees for all the requirements would be costly and challenging to manage. Flexible work can be advantageous in situations like this. Further, it can also be beneficial for students, remote workers, etc. who need fluidity in their work schedule."   
+      info: "With the arrival of millennials and gen Zs in the workforce, flexible work culture started to gain prominence. And with COVID 19 rewriting the way offices operate, the traditional office setup is also adapting to flexible work. In this scenario, an app that provides a medium for people to find flexible work would be ideal. The app can act as a platform where employers share the requirement for the skills they need, along with the period of hiring and details. Interested candidates can connect with them through the app."   
     },
     { 
       name: "Online Flower And Gift Delivery",
@@ -373,7 +373,7 @@ var tempList = "";
     
     // Create an element to load an idea
     html = '<h1 class="idea-name">' + 
-            ideas[randomIdea].name + ' <br />App</h1><div id="idea-info" class="toggle-content"><p id="idea">' + 
+            ideas[randomIdea].name + ' <br />App</h1><div id="idea-info" class="infobox"><p id="idea">' + 
             ideas[randomIdea].info + 
             '</p></div>';
     
