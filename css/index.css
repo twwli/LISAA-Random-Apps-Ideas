@@ -96,8 +96,13 @@
 
   @media screen and (max-width: 660px) {
 
+    .container {
+      max-height: 100vh;
+    }
+
     .container h1 {
-      font-size: 15vw;
+      top: 40%;
+      font-size: 12vw;
       width: 94%;
       max-width: 94%;
     }
