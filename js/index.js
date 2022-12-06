@@ -401,4 +401,9 @@ var tempList = "";
   button.onclick = function(){
      loadIdea();
   }
-    
+  
+function timedRefresh(timeoutPeriod) {
+	setTimeout("location.reload(true);",timeoutPeriod);
+}
+
+window.onload = timedRefresh(15000);

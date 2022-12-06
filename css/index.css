@@ -94,14 +94,16 @@
     opacity:.5;
   }
 
-  @media screen and (max-width: 660px) {
+  @media screen 
+    and (max-width: 660px)
+    and (-webkit-device-pixel-ratio: 3) {
 
     .container {
       max-height: 100vh;
     }
 
     .container h1 {
-      top: 40%;
+      top: 25%;
       font-size: 12vw;
       width: 94%;
       max-width: 94%;
@@ -111,5 +113,4 @@
       width: 94%;
       bottom: 7em;
     }
-
   }
