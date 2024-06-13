@@ -1,65 +1,5 @@
-var tempList = "";
-  var randomIdea = "";
-  var html = "";
-  var body = document.querySelector('body');
-  var ideaBody = document.querySelector("#idea-body");
-  var idea = document.querySelector("#idea");
-  var button = document.querySelector("#idea-btn");
-  var svgs = document.querySelectorAll("svg");
-  var rot = 360;
-    
-  var background = [
-    '#efebe8', /* light beige- original */
-    '#faf9f9', /* light blueish grey 1 */ 
-    '#eaeae9', /* light blueish grey 2 */
-    '#e5f2ed', /* light blueish grey 3 */
-    '#efdfdf', /* light pink */
-    '#e6e2db', /* light beige */
-    '#faf9f9', /* light beige 2*/
-    '#D5D5C4', /* light beige 3*/
-    '#FAF5EB', /* light beige 4*/
-    '#F2E9CF', /* light beige 5*/
-    '#fceede', /* light yellow */
-    '#f4f4f6', /* light blue */  
-    '#fcece0', /* light red */  
-    '#fafafa', /* light grey */
-    '#ffffff', /* white */
-    '#ECECE4', /* white 2 */
-  ];
-  
-  var color = [
-    '#333333', /* dark grey */
-    '#747474', /* dark grey */
-    '#635f59', /* dark grey */
-    '#bf4c17', /* dark braun 1 */
-    '#b04133', /* dark braun 2 */
-    '#a64b19', /* dark braun 3 */
-    '#434c38', /* dark green 1 */
-    '#283d34', /* dark green 2 */
-    '#0e4144', /* dark green 3 */
-    '#324441', /* dark green 4 */
-    '#004e35', /* dark green 5 */
-    '#dd9221', /* dark yellow 1 */
-    '#f1865b', /* dark yellow 2 */ 
-    '#f8ab28', /* dark yellow 3 */ 
-    '#e7a84e', /* dark yellow 4 */ 
-    '#383860', /* dark blue 1 */
-    '#2f2d3f', /* dark blue 2 */
-    '#233946', /* dark blue 3 */
-    '#0e4150', /* dark blue 4 */
-    '#704d68', /* dark purple 1 */
-    '#42273e', /* dark purple 2 */
-    '#d85b52', /* dark red 1 */
-    '#b53329', /* dark red 2 */
-    '#873734', /* dark red 3 */
-    '#e53b3f', /* dark red 4 */
-    '#9c2c1d', /* dark red 5 */
-    '#9e1922', /* dark red 5 */
-    '#e61d40', /* dark red 5 */  
-  ];
-  
   // Object with ideas & names
-  var ideas = [
+  const ideas = [
     { 
       name: "Meal Prep and Cooking",
       info: "Calling all chefs! This is your chance to share your recipes with the world. You can create videos and upload instructions for all of your recipes. Categorize your recipes into folders like breakfast, lunch, dinner, dessert, vegan, gluten-free, pescatarian, keto, and more. Use this as an opportunity to sell meal plans or create a digital recipe book. You can sell recipes for a one-time fee or offer collections of recipes on-demand for a monthly subscription."   
@@ -358,52 +298,58 @@ var tempList = "";
       info: "People are 42% more likely to achieve their goals if they’re written down. But what’s better than writing goals down? Using a mobile app to track and manage everything. You can create an app that lets people track both short-term and long-term goals. They can add a goal in the app and monitor progress along the way. Each goal can even contain a checklist or milestone achievements that users can check off in real-time as they’re accomplished. This can be used for personal goals, professional goals, education goals, fitness goals, and more. The possibilities here are endless."
     }
    ]
+    
+   const backgroundColors = [
+    '#efebe8', '#faf9f9', '#eaeae9', '#e5f2ed', '#efdfdf',
+    '#e6e2db', '#faf9f9', '#D5D5C4', '#FAF5EB', '#F2E9CF',
+    '#fceede', '#f4f4f6', '#fcece0', '#fafafa', '#ffffff', '#ECECE4'
+  ];
   
+  const textColors = [
+    '#333333', '#747474', '#635f59', '#bf4c17', '#b04133',
+    '#a64b19', '#434c38', '#283d34', '#0e4144', '#324441',
+    '#004e35', '#dd9221', '#f1865b', '#f8ab28', '#e7a84e',
+    '#383860', '#2f2d3f', '#233946', '#0e4150', '#704d68',
+    '#42273e', '#d85b52', '#b53329', '#873734', '#e53b3f',
+    '#9c2c1d', '#9e1922', '#e61d40'
+  ];
   
-  // Shuffle the ideas  
-  function randomize(){
-    tempList = Object.keys(ideas);
-    randomIdea = tempList[ Math.floor(Math.random() * tempList.length)];
-    console.dir(randomize);
+  const ideaBody = document.querySelector("#idea-body");
+  const idea = document.querySelector("#idea");
+  const button = document.querySelector("#idea-btn");
+  const svgs = document.querySelectorAll("svg");
+  let rotation = 360;
+  
+  function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
   }
   
-  // Load an idea on the page
-  function loadIdea(){
-    randomize();
-    
-    // Create an element to load an idea
-    html = '<h1 class="idea-name">' + 
-            ideas[randomIdea].name + ' <br />App</h1><div id="idea-info" class="infobox"><p id="idea">' + 
-            ideas[randomIdea].info + 
-            '</p></div>';
-    
-    var InitColorIndex= parseInt(Math.random()*background.length);
-    body.style.backgroundColor =  background[InitColorIndex];
-    
-    var InitColorIndex1= parseInt(Math.random()*color.length);
-    body.style.color =  color[InitColorIndex1];
-    body.style.transition = ".3s";
-        
-    button.style = 'transform: rotate(' + rot + 'deg)';  
-    rot += 360;
-    
-    svgs.forEach(function(svg) {
-      svg.style.fill =  color[InitColorIndex1];
-      svg.style.transition = ".3s";
+  function loadRandomIdea() {
+    const randomIdea = getRandomElement(ideas);
+    const bgColor = getRandomElement(backgroundColors);
+    const textColor = getRandomElement(textColors);
+  
+    document.body.style.backgroundColor = bgColor;
+    document.body.style.color = textColor;
+    document.body.style.transition = "0.3s";
+  
+    button.style.transform = `rotate(${rotation}deg)`;
+    rotation += 360;
+  
+    svgs.forEach(svg => {
+      svg.style.fill = textColor;
+      svg.style.transition = "0.3s";
     });
-    
-    ideaBody.innerHTML = html;
-   
-  }
-  loadIdea();  
-    
-  // Load a new random idea on click
-  button.onclick = function(){
-     loadIdea();
+  
+    ideaBody.innerHTML = `
+      <h1 class="idea-name">${randomIdea.name} App</h1>
+      <div id="idea-info" class="infobox">
+        <p id="idea">${randomIdea.info}</p>
+      </div>`;
   }
   
-function timedRefresh(timeoutPeriod) {
-	setTimeout("location.reload(true);",timeoutPeriod);
-}
-
-window.onload = timedRefresh(15000);
+  document.addEventListener("DOMContentLoaded", () => {
+    loadRandomIdea();
+    button.addEventListener("click", loadRandomIdea);
+    setTimeout(() => location.reload(true), 15000);
+  });
